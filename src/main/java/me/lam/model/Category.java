@@ -1,4 +1,4 @@
-package me.lam;
+package me.lam.model;
 // Generated Dec 28, 2020 12:24:35 AM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
