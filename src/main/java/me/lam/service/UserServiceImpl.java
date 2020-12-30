@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import me.lam.model.User;
 import me.lam.repository.UserRepository;
@@ -28,6 +29,11 @@ public class UserServiceImpl implements UserService {
 
 	public User findUserByStatusAndNameNamedParams(Integer status, String name) {
 		return userRespository.findUserByStatusAndNameNamedParams(status, name);
+	}
+
+	@Transactional
+	public User save(User user) {
+		return userRespository.save(user);
 	}
 
 }

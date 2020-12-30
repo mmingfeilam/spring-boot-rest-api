@@ -14,4 +14,6 @@ public interface UserService {
 
 	User findUserByStatusAndNameNamedParams(Integer status, String name);
 
+	User save(User user);
+
 }
