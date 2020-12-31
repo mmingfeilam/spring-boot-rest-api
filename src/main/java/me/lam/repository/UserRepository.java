@@ -32,9 +32,15 @@ public interface UserRepository extends JpaRepository<User, Integer>, UserReposi
 
 	@Query("SELECT u FROM User u WHERE u.status = ?1")
 	User findUserByStatus(Integer status);
+	
+	@Query("SELECT u FROM User u WHERE u.id = ?1")
+	User findUserById(Long id);
 
 	@Query("SELECT u FROM User u WHERE u.status = ?1 and u.firstName = ?2")
 	User findUserByStatusAndName(Integer status, String name);
+
+	@Query("SELECT u FROM User u WHERE u.userName = ?1")
+	User findUserByUserName(String userName);
 
 	@Query(value = "SELECT * FROM Users u WHERE u.status = ?1", nativeQuery = true)
 	User findUserByStatusNative(Integer status);

@@ -16,4 +16,12 @@ public interface UserService {
 
 	User save(User user);
 
+	// void delete(int id);
+
+	User findOne(String username);
+
+	User findById(Long id);
+
+	// User update(User user);
+
 }

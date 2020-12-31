@@ -34,6 +34,7 @@ public class User implements java.io.Serializable {
 	private String sex;
 	private Boolean active;
 	private Integer status;
+	private String userName;
 
 	public User() {
 	}
@@ -43,7 +44,7 @@ public class User implements java.io.Serializable {
 	}
 
 	public User(UserType userType, String firstName, String lastName, String password, String email, String sex,
-			Boolean active, Integer status) {
+			Boolean active, Integer status, String userName) {
 		this.userType = userType;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -52,6 +53,7 @@ public class User implements java.io.Serializable {
 		this.sex = sex;
 		this.active = active;
 		this.status = status;
+		this.userName = userName;
 	}
 
 	@Id
@@ -92,6 +94,15 @@ public class User implements java.io.Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	@Column(name = "user_name", length = 45)
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	@Column(name = "password", length = 100)
